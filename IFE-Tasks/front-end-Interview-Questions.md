@@ -295,57 +295,57 @@ html部分
 ###5. 常见兼容性问题？
 --------
 
-* png24位的图片在iE6浏览器上出现背景，解决方案是做成PNG8.也可以引用一段脚本处理.
+    * png24位的图片在iE6浏览器上出现背景，解决方案是做成PNG8.也可以引用一段脚本处理.
 
-* 浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。
+    * 浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。
 
-* IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。 
+    * IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。 
 
-* 浮动ie产生的双倍距离（IE6双边距问题：在IE6下，如果对元素设置了浮动，
-同时又设置了margin-left或margin-right，margin值会加倍。）
-  #box{ float:left; width:10px; margin:0 0 0 100px;} 
+    * 浮动ie产生的双倍距离（IE6双边距问题：在IE6下，如果对元素设置了浮动，
+    同时又设置了margin-left或margin-right，margin值会加倍。）
+      #box{ float:left; width:10px; margin:0 0 0 100px;} 
 
- 这种情况之下IE会产生20px的距离，解决方案是在float的标签样式控制中加入
-  ——_display:inline;将其转化为行内属性。(_这个符号只有ie6会识别)
+     这种情况之下IE会产生20px的距离，解决方案是在float的标签样式控制中加入
+      ——_display:inline;将其转化为行内属性。(_这个符号只有ie6会识别)
 
-*  渐进识别的方式，从总体中逐渐排除局部。 
+    *  渐进识别的方式，从总体中逐渐排除局部。 
 
-  首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。 
-  接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。
+      首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。 
+      接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。
 
-  css
-      .bb{
-       background-color:#f1ee18;/*所有识别*/
-      .background-color:#00deff\9; /*IE6、7、8识别*/
-      +background-color:#a200ff;/*IE6、7识别*/
-      _background-color:#1e0bd1;/*IE6识别*/ 
-      } 
+      css
+          .bb{
+           background-color:#f1ee18;/*所有识别*/
+          .background-color:#00deff\9; /*IE6、7、8识别*/
+          +background-color:#a200ff;/*IE6、7识别*/
+          _background-color:#1e0bd1;/*IE6识别*/ 
+          } 
 
-*  IE下,可以使用获取常规属性的方法来获取自定义属性,
-   也可以使用getAttribute()获取自定义属性;
-   Firefox下,只能使用getAttribute()获取自定义属性. 
-   解决方法:统一通过getAttribute()获取自定义属性.
+    *  IE下,可以使用获取常规属性的方法来获取自定义属性,
+       也可以使用getAttribute()获取自定义属性;
+       Firefox下,只能使用getAttribute()获取自定义属性. 
+       解决方法:统一通过getAttribute()获取自定义属性.
 
-* IE下,event对象有x,y属性,但是没有pageX,pageY属性; 
-  Firefox下,event对象有pageX,pageY属性,但是没有x,y属性.
+    * IE下,event对象有x,y属性,但是没有pageX,pageY属性; 
+      Firefox下,event对象有pageX,pageY属性,但是没有x,y属性.
 
-* 解决方法：（条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。
+    * 解决方法：（条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。
 
-* Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示, 
-  可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决.
+    * Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示, 
+      可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决.
 
-* 超链接访问过后hover样式就不出现了 被点击访问过的超链接样式
-不在具有hover和active了解决方法是改变CSS属性的排列顺序:
-L-V-H-A :  a:link {} a:visited {} a:hover {} a:active {}
+    * 超链接访问过后hover样式就不出现了 被点击访问过的超链接样式
+    不在具有hover和active了解决方法是改变CSS属性的排列顺序:
+    L-V-H-A :  a:link {} a:visited {} a:hover {} a:active {}
 
-* 怪异模式问题：漏写DTD声明，Firefox仍然会按照标准模式来解析网页，
-但在IE中会触发怪异模式。为避免怪异模式给我们带来不必要的麻烦，
-最好养成书写DTD声明的好习惯。现在可以使用[html5](http://www.w3.org/TR/html5/single-page.html)推荐的写法：`<doctype html>`
+    * 怪异模式问题：漏写DTD声明，Firefox仍然会按照标准模式来解析网页，
+    但在IE中会触发怪异模式。为避免怪异模式给我们带来不必要的麻烦，
+    最好养成书写DTD声明的好习惯。现在可以使用[html5](http://www.w3.org/TR/html5/single-page.html)推荐的写法：`<doctype html>`
 
-* 上下margin重合问题
-ie和ff都存在，相邻的两个div的margin-left和margin-right不会重合，但是margin-top和margin-bottom却会发生重合。
-解决方法，养成良好的代码编写习惯，同时采用margin-top或者同时采用margin-bottom。
-* ie6对png图片格式支持不好(引用一段脚本处理)
+    * 上下margin重合问题
+    ie和ff都存在，相邻的两个div的margin-left和margin-right不会重合，但是margin-top和margin-bottom却会发生重合。
+    解决方法，养成良好的代码编写习惯，同时采用margin-top或者同时采用margin-bottom。
+    * ie6对png图片格式支持不好(引用一段脚本处理)
 
 
     
@@ -738,9 +738,13 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
 ----------------------------------
 
          分为4个步骤：
-    （1），当发送一个URL请求时，不管这个URL是Web页面的URL还是Web页面上每个资源的URL，浏览器都会开启一个线程来处理这个请求，同时在远程DNS服务器上启动一个DNS查询。这能使浏览器获得请求对应的IP地址。
-    （2）， 浏览器与远程Web服务器通过TCP三次握手协商来建立一个TCP/IP连接。该握手包括一个同步报文，一个同步-应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。
-    （3），一旦TCP/IP连接建立，浏览器会通过该连接向远程服务器发送HTTP的GET请求。远程服务器找到资源并使用HTTP响应返回该资源，值为200的HTTP响应状态表示一个正确的响应。
+    （1），当发送一个URL请求时，不管这个URL是Web页面的URL还是Web页面上每个资源的URL，
+    浏览器都会开启一个线程来处理这个请求，同时在远程DNS服务器上启动一个DNS查询。这能使浏览器获得请求对应的IP地址。
+    （2）， 浏览器与远程Web服务器通过TCP三次握手协商来建立一个TCP/IP连接。
+    该握手包括一个同步报文，一个同步-应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。
+    该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。
+    （3），一旦TCP/IP连接建立，浏览器会通过该连接向远程服务器发送HTTP的GET请求。
+    远程服务器找到资源并使用HTTP响应返回该资源，值为200的HTTP响应状态表示一个正确的响应。
     （4），此时，Web服务器提供资源服务，客户端开始下载资源。
 
 详情：[从输入 URL 到浏览器接收的过程中发生了什么事情？][7]
@@ -1066,7 +1070,8 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
 ###43. JavaScript原型，原型链 ? 有什么特点？
 -------------------------
 
-    *  原型对象也是普通的对象，是对象一个自带隐式的 __proto__ 属性，原型也有可能有自己的原型，如果一个原型对象的原型不为null的话，我们就称之为原型链。
+    *  原型对象也是普通的对象，是对象一个自带隐式的 __proto__ 属性，
+    原型也有可能有自己的原型，如果一个原型对象的原型不为null的话，我们就称之为原型链。
     *  原型链是由一些用来继承和共享属性的对象组成的（有限的）对象链。
 
 ###44. 页面重构怎么操作？
@@ -1088,7 +1093,8 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
 ---------------------------
 
 
-     1. 我们在网页中的某个操作（有的操作对应多个事件）。例如：当我们点击一个按钮就会产生一个事件。是可以被 JavaScript 侦测到的行为。  
+     1. 我们在网页中的某个操作（有的操作对应多个事件）。
+     例如：当我们点击一个按钮就会产生一个事件。是可以被 JavaScript 侦测到的行为。  
      2. 事件处理机制：IE是事件冒泡、firefox同时支持两种事件模型，也就是：捕获型事件和冒泡型事件。；
      3.  ev.stopPropagation();注意旧ie的方法 ev.cancelBubble = true;
 
@@ -1235,4 +1241,17 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
     }
 
 
-
+ [1]: http://segmentfault.com/blog/trigkit4/1190000000718840
+  [2]: http://segmentfault.com/blog/trigkit4/1190000000660786#articleHeader15
+  [3]: http://segmentfault.com/blog/trigkit4/1190000000687844
+  [4]: http://segmentfault.com/blog/trigkit4/1190000000758184#articleHeader5
+  [5]: http://segmentfault.com/blog/trigkit4/1190000000800711#articleHeader30
+  [6]: http://segmentfault.com/blog/trigkit4/1190000000656717
+  [7]: http://segmentfault.com/blog/trigkit4/1190000000697254
+  [8]: http://segmentfault.com/blog/trigkit4/1190000002440502
+  [9]: http://segmentfault.com/blog/trigkit4/1190000000691919
+  [10]: http://segmentfault.com/blog/trigkit4/1190000002585760
+  [11]: http://segmentfault.com/blog/trigkit4/1190000000652891
+  [12]: http://segmentfault.com/blog/trigkit4/1190000002174034
+  [13]: http://segmentfault.com/blog/trigkit4/1190000000691919
+  [14]: http://segmentfault.com/blog/trigkit4/1190000000733959
