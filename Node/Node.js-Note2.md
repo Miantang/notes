@@ -35,4 +35,37 @@ http.get(
 
 ###Express
 
+1. app.js 
+
+用来启动应用程序的应用文件夹。包含应用程序的配置信息
+
+2. ndoe_modules
+
+用来保存在对package.json中定义并且已经安装的Node模块
+
+###Jade
+简洁，缩进，抽象
+
+###MongoGB
+###调试
+`console.log console.error console.warn`
+`node debug app.js`打断点
+
+###测试
+
+1. assert模块
+```js
+assert.strictEqual("he", "she");
+```
+2. BDD Mocha
+
+###部署
+
+1. Heroku
+2. CLoud Foundry
+3. Nodester
+
+## 中间件 socket.io
+
+
 
