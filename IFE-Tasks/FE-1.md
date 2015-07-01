@@ -1,4 +1,4 @@
-[国内大型互联网公司（如BAT）对于web前端开发方向校招都考些什么？](http://www.zhihu.com/question/26188893)
+[国内大型互联网公司（如BAT）对于web前端开发方向校招都考些什么？](http://www.zhihu.com/question/26188893) 
 
 1. 如何在页面上实现一个圆形的可点击区域。能想到用map+area或者svg的，我觉得html可能比较熟；能想到border-radius的，我觉得css可能比较熟。如果实在想不出来什么，我就引导他回答纯js实现，这个时候就问问怎么求一个点在圆上这种简单算法，加上js的Math几个api，怎么获取鼠标坐标什么的。
 
