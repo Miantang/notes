@@ -27,7 +27,7 @@
 
 那么这个结果是如何计算出来的呢？因为运动是相对的，所以我们要设定一个基准长度。而这个基准长度一般来说是刚才所说的展示面板的长度。在滚动MIKU的例子中为12个字符。但是现在我们暂且以图中的2个字符为基准长度来进行计算——
 
-<strong>目标位置 = 基准位置 + ((目标长度-基准长度) / 长度差)*（当前时间点/时间间隔）
+<strong>目标位置 = 基准位置 + ((目标长度-基准长度) / 长度差)*（当前时间点/时间间隔）</strong>
 
 也就是说，如果我把目标长度定为12，在图中的意思就是：
 x = 1 + ((12 - 2) / 5) * (0.8 / 0.8) = 1 + 2 * 1 = 3
@@ -319,22 +319,22 @@ By Azure22 静之籁 2011/05/29
 
 谨以本文纪念我去年的三个通宵。
 
-[1]: [roll-change/1.jpg]
-[2]: [roll-change/2.jpg]
-[3]: [roll-change/3.jpg]
-[4]: [roll-change/4.jpg]
-[5]: [roll-change/5.jpg]
-[6]: [roll-change/6.jpg]
-[7]: [roll-change/7.jpg]
-[8]: [roll-change/8.jpg]
-[9]: [roll-change/9.png]
-[10]: [roll-change/10.jpg]
-[11]: [roll-change/11.jpg]
-[12]: [roll-change/12.jpg]
-[13]: [roll-change/13.jpg]
-[14]: [roll-change/14.jpg]
-[15]: [roll-change/15.jpg]
-[16]: [roll-change/16.jpg]
-[17]: [roll-change/17.jpg]
-[18]: [roll-change/18.jpg]
-[19]: [roll-change/19.jpg]
+[1]: roll-change/1.jpg
+[2]: roll-change/2.jpg
+[3]: roll-change/3.jpg
+[4]: roll-change/4.jpg
+[5]: roll-change/5.jpg
+[6]: roll-change/6.jpg
+[7]: roll-change/7.jpg
+[8]: roll-change/8.jpg
+[9]: roll-change/9.png
+[10]: roll-change/10.jpg
+[11]: roll-change/11.jpg
+[12]: roll-change/12.jpg
+[13]: roll-change/13.jpg
+[14]: roll-change/14.jpg
+[15]: roll-change/15.jpg
+[16]: roll-change/16.jpg
+[17]: roll-change/17.jpg
+[18]: roll-change/18.jpg
+[19]: roll-change/19.jpg
