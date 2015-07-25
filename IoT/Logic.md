@@ -29,5 +29,9 @@ mainApp.js:
 	
 putdatapoint(req, res)
 
+#数据 视图
+
+switch开关的0/1
+
 
 
