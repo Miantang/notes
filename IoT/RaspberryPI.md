@@ -9,5 +9,14 @@ http://www.cnblogs.com/Dn9x/p/3576309.html
  遇到问题：
 
  1. 部分node_modules无法npm。
- （树莓派里，多试几次就可以了。。）
- 2. 
+ （树莓派里，多试几次就可以了。。直接复制过去解决的，问题应该出在node-gyp）
+ 2. 树莓派设定固定IP：
+ <http://blog.csdn.net/jdh99/article/details/22096479>
+
+ 3. 添加开机自启nodejs
+`/etc/rc.local`
+
+ `/home/pi/node-v0.11.9-linux-arm-pi/bin/node`
+
+ 4. nodejs 模块化管理
+ <http://blog.fens.me/nodejs-server-forever/>
