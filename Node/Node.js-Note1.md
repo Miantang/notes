@@ -13,3 +13,7 @@ javascript围绕着最初与DOM相关的事件架构。开发人员可以在事�
 ####同步与异步的区别
 
 ####事件循环是什么
+
+####setTimeout 作用域是Timeout类(`\#L298`)
+
+<https://github.com/joyent/node/blob/master/lib/timers.js#L234>
