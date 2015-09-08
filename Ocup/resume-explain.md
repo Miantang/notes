@@ -45,6 +45,7 @@
     是一种比较不错的Android消息推送方案。
 
 2.什么是websocket？
+
 3. 有一个需求是摄像头监控，刚好摄像头这部分侦听的是另外一个端口。所以这里涉及到了解决跨域的问题。
 
 4. 前端方面的问题，一级界面有一批正方形的button来链接到对应设备的二级界面。为了实现按钮的宽高比一直保持1比1，当初是，宽度可以用百分比来确定，但是在缩放过程中，高度没法跟着变。后来查阅相关响应式布局的资料，才知道有vw,vh这样的单位，直接设置相同的vw就解决了。
@@ -58,9 +59,13 @@
     b)
 
 3. ajax
+
 4. nodejs
+
 5. html5
+
 6. http协议
+
 7. jQuery，原生JavaScript
 
 8. websocket
@@ -69,33 +74,58 @@
 
 后端：
  1. restful→JSON-RPC
+
  2. mysql操作
+
  3. 
 百度前端技术学院的任务项目：
 任务1：
-1. CSS布局 2. 语义化标签
+1. CSS布局 
+
+2. 语义化标签
+
 http://www.zhangxinxu.com/wordpress/2010/01/%E5%AF%B9overflow%E4%B8%8Ezoom%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%A4%E8%AF%86/
 
 水平居中：
+
     1. 块级元素 定义宽度， margin:auto
+
     2. 父元素：text-align center; display: inline-block
+
     3. absolute left:50%, margin-left:-(content-width/2)
+
     ↓3. （float: left;）相对父级position: absolute; left: 50%;子级设置relative right：50%
+
 垂直居中：
+
     1. 父级display:table 子集table-cell vertical-align: middle; 
+
     2. absolute ,top 50%, margin-top:-content高度，(设置overflow:auto防止溢出）
+
     3. 外加一个div包裹，height为50%，margin-bottom为-content高度，→content清除浮动
+
     4. absolute。设定固定宽高，并且top,bottom都为0，margin:auto会使他居中。（content会被截断）
+
     5. height等于line-height
+
 都居中：
+
     3. 父级display:table 子集table-cell vertical-align: middle; text-align: center;
+
     4. position: absolute; top: 50%; left: 50%;transform: translate(-50%, -50%);
+
     5. display: flex , justify-content: center
+
 清除浮动：
+
     1、<div style=”clear:both”>
+
     2. br 有 clear=“all | left | right | none” 
+
     3. 父元素设置 overflow：hidden （当内容溢出元素框时发生的事情。默认visible，scroll，继承）
+
     4. 父元素设置 overflow：auto 属性
+
     5. .clearfix:after {
         content: ".";
         display: block;
@@ -103,15 +133,21 @@ http://www.zhangxinxu.com/wordpress/2010/01/%E5%AF%B9overflow%E4%B8%8Ezoom%E6%B8
         clear: both;
         visibility: hidden;
     }
+
 什么是 BFC：
+
     会计格式上下文。每个BFC是独立布局的，盒子内的元素不会影响到外面的元素
     垂直方向上的margin会重叠
+
 会触发BFC：
+
     float 除了none以外的值 
     overflow 除了visible 以外的值（hidden，auto，scroll ） 
     display (table-cell，table-caption，inline-block) 
     position（absolute，fixed）
+
 BFC特性：
+
     1. 块级格式化上下文会阻止外边距叠加 
     2)块级格式化上下文不会重叠浮动元素
     3)块级格式化上下文通常可以包含浮动
@@ -132,6 +168,7 @@ http://www.cnblogs.com/beiyuu/archive/2011/07/20/js-localstorage-userdata.html
 http://www.hbrc.com/rczx/news-945147.html
 
 LB3：
+
 那是我召集的一批程序员9和绘画师7，根据自己设计的动画分镜，来创作弹幕动画。
 （我自己也参与进重要模块的制作）
 工作流程的话呢，是让绘画师先根据分镜，先用自己写的矢量绘图工具来制作人物、背景模型，然后程序员依据这些模型根据故事的感情要素来做动画特效和一些滤镜等视觉效果处理，完成整个弹幕动画。整个过程都是在记事本上写类似ECMAScript绘图代码的过程。
