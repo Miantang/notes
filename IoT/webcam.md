@@ -29,5 +29,19 @@ mjpg_streamer -i "input_uvc.so -y -f 5 -r 320*240 -q 50 -d /dev/video0" -o "outp
 1. <http://www.thinksaas.cn/ask/question/18074/>
 2. <http://stackoverflow.com/questions/13437244/mjpg-streaming-with-a-raspberry-pi-and-a-webcam>
 ```
-./mjpg_streamer -i "./input_uvc.so -d /dev/video0 -y -n" -o "./output_http.so -p 8081 -w ./www"
+/home/pi/mjpg-streamer/mjpg_streamer -i "/home/pi/mjpg-streamer/input_uvc.so -d /dev/video0 -y -n" -o "/home/pi/mjpg-streamer/output_http.so -p 8081 -w /home/pi/mjpg-streamer/www"
+```
+
+```
+#!/bin/sh /etc/rc.common  
+# /init.d/startCamera  
+START=50  
+start()  
+{  
+/home/pi/mjpg-streamer/mjpg_streamer -i "/home/pi/mjpg-streamer/input_uvc.so -d /dev/video0 -y -n" -o "/home/pi/mjpg-streamer/output_http.so -p 8081 -w /home/pi/mjpg-streamer/www"
+}  
+stop()  
+{  
+killall startCamera  
+} 
 ```
