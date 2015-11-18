@@ -5,3 +5,8 @@
     Gulp 和 Grunt 类似。但相比于 Grunt 的频繁的 IO 操作，Gulp 的流操作，能更快地完成构建。
 
 <https://github.com/lisposter/gulp-docs-zh-cn/blob/master/API.md>
+
+
+学习FrameWork7关于Banner的写法，版权声明。
+
+<https://github.com/nolimits4web/Framework7.git>

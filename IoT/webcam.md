@@ -45,3 +45,6 @@ stop()
 killall startCamera  
 } 
 ```
+
+
+如果慢速运转，树莓派，摄像头只能15秒就crash了。
