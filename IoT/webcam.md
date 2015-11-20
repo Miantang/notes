@@ -32,6 +32,9 @@ mjpg_streamer -i "input_uvc.so -y -f 5 -r 320*240 -q 50 -d /dev/video0" -o "outp
 /home/pi/mjpg-streamer/mjpg_streamer -i "/home/pi/mjpg-streamer/input_uvc.so -d /dev/video0 -y -n" -o "/home/pi/mjpg-streamer/output_http.so -p 8081 -w /home/pi/mjpg-streamer/www"
 ```
 
+/home/pi/mjpg-streamer/mjpg_streamer -i "/home/pi/mjpg-streamer/input_uvc.so -d /dev/video0 -n" -o "/home/pi/mjpg-streamer/output_http.so -p 8081 -w /home/pi/mjpg-streamer/www"
+
+
 ```
 #!/bin/sh /etc/rc.common  
 # /init.d/startCamera  
