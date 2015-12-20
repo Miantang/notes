@@ -51,3 +51,35 @@ killall startCamera
 
 
 如果慢速运转，树莓派，摄像头只能15秒就crash了。
+
+添加到 /etc/profile
+
+export LD_LIBRARY_PATH=/home/pi/mjpg-streamer:$LD_LIBRARY_PATH
+
+使用supervisor [supervisor学习](http://my.oschina.net/crooner/blog/395069)
+
+[program:mjpg_streamer]
+command=/home/pi/mjpg-streamer/mjpg_streamer -i "/home/pi/mjpg-streamer/input_uvc.so -d /dev/video0 -y -n" -o "/home/pi/mjpg-streamer/output_http.so -p 8081 -w /home/pi/mjpg-streamer/www" ; 被监控的进程路径
+numprocs=1                    ; 启动几个进程
+directory=/home/pi/mjpg-streamer              ; 执行前要不要先cd到目录去，一般不用
+autostart=true                ; 随着supervisord的启动而启动
+autorestart=true              ; 自动重启。。当然要选上了
+
+[program:oraynewph]
+command=sudo oraynewph start; 
+numprocs=1                    ; 启动几个进程
+;directory=/home/pi/mjpg-streamer              ; 执行前要不要先cd到目录去，一般不用
+autostart=true                ; 随着supervisord的启动而启动
+autorestart=true              ; 自动重启。。当然要选上了
+
+
+摄像头控制软件方案二：motion
+
+遇到问题：
+1. cannot create process id file (pid file) /var/run/motion/motion.pid: No such file or directory
+
+2. [0] Thread 1 - Watchdog timeout, trying to do a graceful restart
+
+http://www.verydemo.com/demo_c167_i129267.html
+
+http://www.lavrsen.dk/foswiki/bin/view/Motion/MotionGuideGettingItRunning
